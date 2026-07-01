@@ -70,4 +70,4 @@ This server is listed in the official MCP Registry as `io.github.opus-pro/opuscl
 
 ## License
 
-[MIT](./LICENSE) © Opus Pro, Inc.
+[MIT](./LICENSE) © Opusclip Inc.
