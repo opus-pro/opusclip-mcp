@@ -1,0 +1,35 @@
+{
+  "name": "@opusclip/mcp",
+  "version": "0.1.0",
+  "description": "Connect your agent to OpusClip — turn long videos into AI-curated short clips.",
+  "type": "module",
+  "bin": {
+    "opusclip-mcp": "bin.mjs"
+  },
+  "mcpName": "io.github.opus-pro/opusclip",
+  "files": [
+    "bin.mjs",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "opusclip",
+    "video",
+    "clips",
+    "agent",
+    "ai"
+  ],
+  "homepage": "https://help.opus.pro/api-reference/agent-setup",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opus-pro/opusclip-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opus-pro/opusclip-mcp/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
