@@ -1,0 +1,30 @@
+name: Publish to MCP Registry
+
+# Publishes server.json to the Official MCP Registry via GitHub OIDC.
+# OIDC proves the workflow runs under the opus-pro org, which authorizes the
+# io.github.opus-pro/* namespace -- no public org membership, no secrets, no DNS.
+on:
+  push:
+    tags: ["v*"] # e.g. v0.1.0
+  workflow_dispatch: {} # allow manual "Run workflow" from the Actions tab
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # required for OIDC
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+
+      - name: Authenticate (GitHub OIDC)
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish server.json
+        run: ./mcp-publisher publish
