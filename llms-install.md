@@ -4,9 +4,32 @@ OpusClip is a **remote** MCP server — it is hosted, so there is nothing to bui
 run locally. Authentication is **OAuth**, handled in the browser on first use. No API
 keys or environment variables are required.
 
-## Add it to your MCP client
+## Add it to Cline
 
-Point your client at the hosted endpoint (Streamable HTTP):
+Cline connects to remote servers over Streamable HTTP. Add this to
+`cline_mcp_settings.json` (Cline panel → MCP Servers → Configure → Configure MCP Servers),
+or use the **Remote Servers** tab: Server Name `opusclip`, Server URL
+`https://mcp.opus.pro/mcp`, Add Server.
+
+```json
+{
+  "mcpServers": {
+    "opusclip": {
+      "type": "streamableHttp",
+      "url": "https://mcp.opus.pro/mcp",
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}
+```
+
+No token or `headers` are needed — the server uses OAuth, and Cline opens the browser
+sign-in automatically on the first tool call.
+
+## Other MCP clients
+
+Most clients accept the endpoint URL directly:
 
 ```json
 {
