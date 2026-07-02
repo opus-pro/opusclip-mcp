@@ -1,5 +1,7 @@
 # OpusClip MCP
 
+[![smithery badge](https://smithery.ai/badge/opusclip/opusclip)](https://smithery.ai/servers/opusclip/opusclip)
+
 Turn long videos into AI-curated short clips — from your agent. Submit a video file or
 URL and OpusClip finds the best moments, adds captions, reframes to vertical, and returns
 ready-to-post clips. It can also generate thumbnails and social copy, pull transcripts,
