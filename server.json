@@ -3,7 +3,7 @@
   "name": "io.github.opus-pro/opusclip",
   "title": "OpusClip",
   "description": "Turn long videos into AI-curated short clips: caption, reframe, thumbnail, schedule, and publish.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "websiteUrl": "https://help.opus.pro/api-reference/agent-setup",
   "repository": {
     "url": "https://github.com/opus-pro/opusclip-mcp",
@@ -24,5 +24,10 @@
         "type": "stdio"
       }
     }
-  ]
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "tags": ["video", "video-editing", "content-creation", "social-media", "short-form-video", "media"]
+    }
+  }
 }
