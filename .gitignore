@@ -5,3 +5,7 @@ npm-debug.log*
 .env
 .env.*
 dist/
+__pycache__/
+*.egg-info/
+.venv/
+uv.lock

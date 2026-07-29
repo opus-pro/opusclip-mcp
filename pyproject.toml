@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "opusclip-mcp"
+version = "0.1.0"
+description = "Connect your agent to OpusClip — turn long videos into AI-curated short clips."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+keywords = ["mcp", "modelcontextprotocol", "opusclip", "video", "clips", "agent", "ai"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Video",
+]
+
+[project.urls]
+Homepage = "https://help.opus.pro/api-reference/agent-setup"
+Repository = "https://github.com/opus-pro/opusclip-mcp"
+Issues = "https://github.com/opus-pro/opusclip-mcp/issues"
+
+[project.scripts]
+opusclip-mcp = "opusclip_mcp:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/opusclip_mcp"]

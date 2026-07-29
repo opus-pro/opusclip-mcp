@@ -1,6 +1,9 @@
 # OpusClip MCP
 
+<!-- mcp-name: io.github.opus-pro/opusclip -->
+
 [![smithery badge](https://smithery.ai/badge/opusclip/opusclip)](https://smithery.ai/servers/opusclip/opusclip)
+[![PyPI](https://img.shields.io/pypi/v/opusclip-mcp)](https://pypi.org/project/opusclip-mcp/)
 
 Turn long videos into AI-curated short clips — from your agent. Submit a video file or
 URL and OpusClip finds the best moments, adds captions, reframes to vertical, and returns
@@ -39,6 +42,23 @@ For stdio-only clients, use the npm launcher instead:
   }
 }
 ```
+
+Or the PyPI launcher, if you prefer Python tooling ([`uvx`](https://docs.astral.sh/uv/)):
+
+```json
+{
+  "mcpServers": {
+    "opusclip": {
+      "command": "uvx",
+      "args": ["opusclip-mcp"]
+    }
+  }
+}
+```
+
+Both launchers proxy stdio to the hosted endpoint via
+[mcp-remote](https://www.npmjs.com/package/mcp-remote), so the Python launcher also
+needs Node.js >= 18 on PATH.
 
 On the first tool call, a browser window opens to sign in to your OpusClip account and
 approve access.
