@@ -1,0 +1,27 @@
+name: Publish to PyPI
+
+# Publishes the opusclip-mcp package to PyPI via Trusted Publishing (GitHub OIDC).
+# The trusted publisher is registered on pypi.org for this repo + this workflow
+# file + the `pypi` environment -- no API tokens, no secrets.
+on:
+  push:
+    tags: ["v*"] # e.g. v0.2.0
+  workflow_dispatch: {} # allow manual "Run workflow" from the Actions tab
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write # required for OIDC
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Build sdist and wheel
+        run: pipx run build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
