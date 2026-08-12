@@ -11,7 +11,8 @@ on:
       - ".github/actions/**"
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  contents: read # actions/checkout needs this to fetch a private repo
 
 jobs:
   check:
