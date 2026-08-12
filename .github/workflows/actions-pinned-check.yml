@@ -1,0 +1,39 @@
+# SEC-254: every `uses:` must reference an immutable 40-char commit SHA.
+# Mutable tags/branches do not pin — a compromised maintainer token can repoint
+# them at a malicious commit (CVE-2025-30066 hit 23k+ repos via tj-actions).
+# Deliberately implemented with shell only: the gate itself must not add a
+# third-party action dependency.
+name: actions-pinned-check
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/**"
+      - ".github/actions/**"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Fail on unpinned action refs
+        run: |
+          set -euo pipefail
+          bad=$(grep -rnE '^[[:space:]]*(-[[:space:]]+)?uses:' .github \
+                  --include='*.yml' --include='*.yaml' \
+                | sed 's/#.*//' \
+                | grep 'uses:' \
+                | grep -vE "uses:[[:space:]]*[\"']?\./" \
+                | grep -vE 'docker://[^[:space:]]+@sha256:' \
+                | grep -vE "@[0-9a-f]{40}[\"']?[[:space:]]*$" \
+                || true)
+          if [ -n "$bad" ]; then
+            echo "Unpinned action references (must be 40-char commit SHAs):"
+            echo "$bad"
+            exit 1
+          fi
+          echo "All action references are SHA-pinned."
