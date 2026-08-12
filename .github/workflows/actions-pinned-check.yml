@@ -1,3 +1,4 @@
+---
 # SEC-254: every `uses:` must reference an immutable 40-char commit SHA.
 # Mutable tags/branches do not pin — a compromised maintainer token can repoint
 # them at a malicious commit (CVE-2025-30066 hit 23k+ repos via tj-actions).
