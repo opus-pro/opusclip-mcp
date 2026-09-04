@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "opusclip-mcp"
-version = "0.1.0"
+version = "0.3.0"
 description = "Connect your agent to OpusClip — turn long videos into AI-curated short clips."
 readme = "README.md"
 license = "MIT"
