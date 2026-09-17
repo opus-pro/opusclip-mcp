@@ -2,7 +2,7 @@
   "name": "opusclip",
   "displayName": "OpusClip",
   "description": "Turn long videos into AI-curated short clips: caption, reframe, thumbnail, schedule, and publish.",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "author": {
     "name": "Opus Pro"
   },
