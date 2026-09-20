@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "opusclip": {
+      "type": "http",
+      "url": "https://mcp.opus.pro/mcp",
+      "note": "Official hosted OpusClip MCP server (full tool surface). Browser-based OAuth on first connection; no API key or local helper required."
+    }
+  }
+}

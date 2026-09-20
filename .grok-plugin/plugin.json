@@ -1,0 +1,18 @@
+{
+  "name": "opusclip",
+  "version": "0.3.0",
+  "description": "Turn long videos into AI-curated short clips from Grok Build: analyze a video, preview and edit clips, reframe to vertical, caption, export, and schedule posts to connected social accounts.",
+  "author": {
+    "name": "Opus Pro",
+    "url": "https://www.opus.pro"
+  },
+  "repository": "https://github.com/opus-pro/opusclip-mcp",
+  "homepage": "https://help.opus.pro/api-reference/agent-setup",
+  "license": "MIT",
+  "keywords": [
+    "opusclip",
+    "opus clip",
+    "opusclip mcp",
+    "opus pro"
+  ]
+}
